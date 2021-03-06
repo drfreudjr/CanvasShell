@@ -6,42 +6,35 @@ window.onload = function () {           // onload wrapper
 var canvas;                             // Global canvas object reference
 var context; 
 
-// // Begin dynamic fulls screen canvas code
-
-sizeCanvas()                            // create initial canvas
 addEventListener("resize", sizeCanvas); // resize canvas and redraw on window size change
-
-function createCanvas () {   
-    const canvas = document.createElement("canvas"); 
-    canvas.style.position = "absolute"; 
-    canvas.style.left     = "0px";      
-    canvas.style.top      = "0px";
-
-    document.body.appendChild(canvas);  // Add to document
-    return canvas;
-}
+sizeCanvas()                            // create initial canvas
 
 function sizeCanvas () {                // Create or resize 
+    function createCanvas () {   
+        const canvas = document.createElement("canvas"); 
+        canvas.style.position = "absolute"; 
+        canvas.style.left     = "0px";      
+        canvas.style.top      = "0px";
+
+        document.body.appendChild(canvas);  // Add to document
+        return canvas;
+    }
     if (canvas === undefined) {         
         canvas = createCanvas();        
         context = canvas.getContext("2d");  
     }
     canvas.width  = innerWidth; 
     canvas.height = innerHeight; 
-    drawScreen()     
+    main()     
 }
 
-function drawScreen() {  // wrapper that gets called on resize event
-
-    //  //  // Enter Page Specific Code here
-
+function main() {  // wrapper that gets called on resize event
 
 width=window.innerWidth
 height=window.innerHeight
 
-
-
 renderFrame()
+
 function renderFrame () {
         fps = 60    // set lower to throttle for faster that is multiplr frames/paint 
         setTimeout(function() {
