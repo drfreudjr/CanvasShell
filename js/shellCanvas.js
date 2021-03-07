@@ -1,13 +1,12 @@
 'use strict'
 const cl = console.log;
-
 window.onload = function () {           // onload wrapper
                                         
 let canvas;                             
 let context; 
 
-sizeCanvas()                            // create initial canvas
 addEventListener("resize", sizeCanvas); 
+sizeCanvas()                            // create initial canvas
 
 function sizeCanvas () {                // Create or resize 
 
@@ -23,7 +22,6 @@ function sizeCanvas () {                // Create or resize
 
         document.body.appendChild(canvas);  // Add to document
         context = canvas.getContext("2d");  
-        
         return canvas;
     }
 
