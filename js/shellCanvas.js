@@ -2,11 +2,11 @@
 const cl = console.log;
 
 window.onload = function () {           // onload wrapper
-                                        // Global 2D context reference
-let canvas;                             // Global canvas object reference
+                                        
+let canvas;                             
 let context; 
 
-addEventListener("resize", sizeCanvas); // resize canvas and redraw on window size change
+addEventListener("resize", sizeCanvas); 
 sizeCanvas()                            // create initial canvas
 
 function sizeCanvas () {                // Create or resize 
