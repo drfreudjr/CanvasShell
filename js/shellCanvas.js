@@ -6,14 +6,13 @@ window.onload = function () {           // onload wrapper
 let canvas;                             
 let context; 
 
-addEventListener("resize", sizeCanvas); 
 sizeCanvas()                            // create initial canvas
+addEventListener("resize", sizeCanvas); 
 
 function sizeCanvas () {                // Create or resize 
 
     if (canvas === undefined) {         
         canvas = createCanvas();        
-        context = canvas.getContext("2d");  
     }
 
     function createCanvas () {   
@@ -23,6 +22,8 @@ function sizeCanvas () {                // Create or resize
         canvas.style.top      = "0px";
 
         document.body.appendChild(canvas);  // Add to document
+        context = canvas.getContext("2d");  
+        
         return canvas;
     }
 
@@ -32,9 +33,6 @@ function sizeCanvas () {                // Create or resize
 }
 
 function main() {  // wrapper that gets called on resize event
-    let width=window.innerWidth
-    let height=window.innerHeight
-
     renderFrame()
 
     function renderFrame () {
@@ -47,9 +45,12 @@ function main() {  // wrapper that gets called on resize event
 
 function plotFrame () {
     context.fillStyle = 'orange'
-    context.fillRect(0,0,width,height)
+    context.fillRect(0,0,canvas.width,canvas.height)
+
+    context.fillStyle = 'red'
+    context.fillRect(innerWidth/3, innerHeight/3, innerWidth/3,innerHeight/3)
+
 }
 
-
-}   // end drawScreen wrapper
+}   // end main wrapper
 }   // end onload wrapper
