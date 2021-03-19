@@ -1,5 +1,8 @@
-'use strict'
 const cl = console.log;
+import { PI } from './modules/Pi.js'
+
+cl(PI)
+
 window.onload = function () {           // onload wrapper                                  
     let canvas;                             
     let context; 
