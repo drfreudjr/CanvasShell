@@ -1,8 +1,6 @@
 const cl = console.log;
 import { PI } from './modules/Pi.js'
 
-cl(PI)
-
 window.onload = function () {           // onload wrapper                                  
     let canvas;                             
     let context; 
@@ -48,7 +46,7 @@ window.onload = function () {           // onload wrapper
 
         context.fillStyle = 'red'
         context.fillRect(innerWidth/3, innerHeight/3, innerWidth/3,innerHeight/3)
-
+        cl('here')
     }
 
     }   // end main wrapper
